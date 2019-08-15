@@ -12,6 +12,7 @@ const BeautifulButton = styled.button`
     font-size: 3rem;
     margin: 20%;
     border-radius: 50px;
+    padding: 2%;
 
     :hover{
         color: red;

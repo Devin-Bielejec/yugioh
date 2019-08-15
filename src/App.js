@@ -8,6 +8,7 @@ import { HOTCButton } from "./HOTCButton";
 import styled from "styled-components";
 import { DefendingCard } from "./DefendingCard";
 import { Result } from "./Result";
+import { ResetButton } from "./ResetButton";
 
 const AttackArea = styled.section`
   display: grid;
@@ -55,8 +56,8 @@ function App() {
           <HOTCButton drawCard={drawCard}/>
           <DefendingCard showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster} setDisplayMessage={setDisplayMessage}/>
           <Result displayMessage={displayMessage} defendingMonster={defendingMonster} attackingMonster={attackingMonster}/>
+          <ResetButton displayMessage={displayMessage}/>
         </AttackArea>
-        
       </header>
     </div>
   );
