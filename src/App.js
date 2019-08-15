@@ -17,8 +17,9 @@ const AttackArea = styled.section`
 
 
 function App() {
-  const [monsters, setMonsters] = useState()
-
+  const [attackingMonster, changeAttackingMonster] = useState();
+  const [defendingMonster, changeDefendingMonster] = useState();
+    
   useEffect( () => {
     axios
       .get("https://db.ygoprodeck.com/api/v5/cardinfo.php")
@@ -26,29 +27,27 @@ function App() {
         const info = res.data;
 
         //Filter by only monsters
-        setMonsters(info.filter( item => item.type.includes("Normal Monster")));
+        const monsters = info.filter( item => item.type.includes("Normal Monster"));
+
+        changeAttackingMonster(monsters[Math.floor(Math.random()*monsters.length)]);
+        changeDefendingMonster(monsters[Math.floor(Math.random()*monsters.length)]);
+
       })
       .catch(err => console.log(`Error: ${err}`))
     }, []);
 
-  const [defendingMonster, changeDefendingMonster] = useState();
-    
-  const drawCard = (arr) => {
-    console.log('draw card');
-    console.log(arr);
-    console.log(arr.length);
-    console.log(arr[Math.floor(Math.random()*arr.length)]);
-    changeDefendingMonster(arr[Math.floor(Math.random()*arr.length)]);
+  const [showDefendingMonster, changeShowDefendingMonster] = useState(false);
+  const drawCard = () => {
+    changeShowDefendingMonster(true);
   }
-
   return (
     <div className="App">
       <header className="App-header">
         <Title />
         <AttackArea className="attackArea">
-          <AttackingCard monsters={monsters}/>
-          <HOTCButton monsters={monsters} drawCard={drawCard}/>
-          <DefendingCard defendingMonster={defendingMonster}/>
+          <AttackingCard attackingMonster={attackingMonster}/>
+          <HOTCButton drawCard={drawCard}/>
+          <DefendingCard showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster}/>
         </AttackArea>
       </header>
     </div>

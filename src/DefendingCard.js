@@ -7,7 +7,7 @@ const GridItem = styled.div`
 
 const DefendingCard = (props) => {
 
-    if (props.defendingMonster) {
+    if (props.showDefendingMonster == true) {
         console.log(props.defendingMonster);
         const defendingMonster = props.defendingMonster;
         const cardImages = defendingMonster["card_images"];

@@ -6,14 +6,13 @@ const GridItem = styled.div`
 `
 const AttackingCard = (props) => {
 
-    if (props.monsters) {
-        const chosenMonster = props.monsters[Math.floor(Math.random()*props.monsters.length)];
-        const cardImages = chosenMonster["card_images"];
+    if (props.attackingMonster) {
+        const cardImages = props.attackingMonster["card_images"];
         const chosenCardImage = cardImages[Math.floor(Math.random()*cardImages.length)];
         const imgSrc = chosenCardImage["image_url"];
 
         return (
-            <GridItem type="attacking" attack={chosenMonster.atk}>
+            <GridItem type="attacking" attack={props.attackingMonster.atk}>
                 <img src={imgSrc}>
                 </img>
             </GridItem>
