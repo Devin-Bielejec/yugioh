@@ -38,6 +38,8 @@ function App() {
     }, []);
 
   const [showDefendingMonster, changeShowDefendingMonster] = useState(false);
+  const [displayMessage, setDisplayMessage] = useState(false);
+
   const drawCard = () => {
     changeShowDefendingMonster(true);
   }
@@ -48,9 +50,10 @@ function App() {
         <AttackArea className="attackArea">
           <AttackingCard attackingMonster={attackingMonster}/>
           <HOTCButton drawCard={drawCard}/>
-          <DefendingCard showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster}/>
+          <DefendingCard showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster} setDisplayMessage={setDisplayMessage}/>
+          <Result displayMessage={displayMessage} defendingMonster={defendingMonster} attackingMonster={attackingMonster}/>
         </AttackArea>
-        <Result showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster} attackingMonster={attackingMonster}/>
+        
       </header>
     </div>
   );

@@ -13,10 +13,10 @@ const DefendingCard = (props) => {
         const cardImages = defendingMonster["card_images"];
         const chosenCardImage = cardImages[Math.floor(Math.random()*cardImages.length)];
         const imgSrc = chosenCardImage["image_url"];
-
+        
         return (
-            <GridItem type="defending" attack={defendingMonster.atk}>
-                <img src={imgSrc}>
+            <GridItem type="defending" attack={defendingMonster.atk} onLoad={setTimeout(()=>props.setDisplayMessage(true),1000)}>
+                <img src={imgSrc} >
                 </img>
             </GridItem>
         )
