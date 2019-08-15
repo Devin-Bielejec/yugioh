@@ -18,7 +18,6 @@ function App() {
         //Filter by only monsters
         setMonsters(info.filter( item => item.type.includes("Monster")));
       })
-      .then(junk => console.log(monsters, junk))
       .catch(err => console.log(`Error: ${err}`))
     }, []);
     
