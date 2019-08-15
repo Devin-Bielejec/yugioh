@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Message = styled.h1`
     grid-column: 1 / span 3;
-    grid-row: 2 / span 1;
+    grid-row: 2 / span .5;
     color: green;
     justify-self: center;
     font-size: 4rem;
@@ -14,6 +14,9 @@ const Message = styled.h1`
     ${props => (props.type === "tie" ? `color: grey` : null)}
 `
 
+const ResetButton = styled.button`
+    color: pink;
+`
 
 const Result = (props) => {
     if (props.displayMessage) {
