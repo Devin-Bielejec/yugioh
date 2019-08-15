@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 
 import Title from "./Title";
+import AttackingCard from "./AttackingCard";
+import HOTCButton from "./HOTCButton";
 
 function App() {
+  const [monsters, setMonsters] = useState()
 
   useEffect( () => {
-    const getData = () => {
-      axios
+    axios
       .get("https://db.ygoprodeck.com/api/v5/cardinfo.php")
-      .then(res => console.log(res));
-    }
-    getData();
-  })
+      .then(res => {
+        const info = res.data;
+        
+        //Filter by only monsters
+        setMonsters(info.filter( item => item.type.includes("Monster")));
+      })
+      .catch(err => console.log(`Error: ${err}`))
+    }, []);
+    
+  
+  console.log(monsters);
 
   return (
     <div className="App">
