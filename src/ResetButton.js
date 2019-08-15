@@ -10,7 +10,7 @@ const Reset = styled.button`
 const ResetButton = (props) => {
     if (props.displayMessage){
         return (
-            <Reset>Reset</Reset>
+            <Reset onClick={()=> {window.location.reload(false)} }>Reset</Reset>
         )
     } else {
         return (

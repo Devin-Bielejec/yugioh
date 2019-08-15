@@ -56,7 +56,7 @@ function App() {
           <HOTCButton drawCard={drawCard}/>
           <DefendingCard showDefendingMonster={showDefendingMonster} defendingMonster={defendingMonster} setDisplayMessage={setDisplayMessage}/>
           <Result displayMessage={displayMessage} defendingMonster={defendingMonster} attackingMonster={attackingMonster}/>
-          <ResetButton displayMessage={displayMessage}/>
+          <ResetButton changeAttackingMonster={changeAttackingMonster} displayMessage={displayMessage}/>
         </AttackArea>
       </header>
     </div>
