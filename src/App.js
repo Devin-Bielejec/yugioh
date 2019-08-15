@@ -16,7 +16,7 @@ function App() {
         const info = res.data;
 
         //Filter by only monsters
-        setMonsters(info.filter( item => item.type.includes("Monster")));
+        setMonsters(info.filter( item => item.type.includes("Normal Monster")));
       })
       .catch(err => console.log(`Error: ${err}`))
     }, []);

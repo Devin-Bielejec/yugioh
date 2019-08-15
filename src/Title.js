@@ -1,8 +1,14 @@
 import React from "react";
+import styled from "styled-components";
+
+const Heading = styled.h1`
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 1;
+`
 
 const Title = (props) => {
     return (
-        <h1>Can you defeat the monster?</h1>
+        <Heading>Can you defeat the monster?</Heading>
     )
 }
 
