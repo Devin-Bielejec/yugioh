@@ -5,6 +5,11 @@ const GridItem = styled.div`
     grid-column: 3 / span 1;
 `
 
+const LoadingItem = styled.h3`
+    color: white;
+    font-size: 2rem;
+`
+
 const DefendingCard = (props) => {
 
     if (props.showDefendingMonster == true) {
@@ -22,7 +27,7 @@ const DefendingCard = (props) => {
         )
     } else {
         return (
-            <h3>You have to use the heart of the cards to draw a monster</h3>
+            <LoadingItem>You have to use the heart of the cards to draw a monster</LoadingItem>
         )
     }
 

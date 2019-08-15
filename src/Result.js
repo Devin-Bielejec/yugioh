@@ -6,6 +6,8 @@ const Message = styled.h1`
     grid-row: 2 / span 1;
     color: green;
     justify-self: center;
+    font-size: 4rem;
+    font-family: 'Chango', cursive;
 
     ${props => (props.type === "win" ? `color: green` : null)}
     ${props => (props.type === "loss" ? `color: red` : null)}
@@ -18,7 +20,7 @@ const Result = (props) => {
         console.log(props.defendingMonster, props.attackingMonster);
         if (Number(props.defendingMonster.atk) > Number(props.attackingMonster.atk)){
             return(
-                <Message type="win">Victory is yours!</Message>
+                <Message type="win">Victory is ours!</Message>
             )
         } else if (Number(props.defendingMonster.atk) < Number(props.attackingMonster.atk)){
             return(

@@ -16,8 +16,7 @@ const AttackArea = styled.section`
   margin: 2%;
   align-items: center;
   justify-items: center;
-  max-height: 700px;
-  
+  max-height: 700px;  
 `
 
 
