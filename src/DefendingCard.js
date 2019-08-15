@@ -15,14 +15,14 @@ const DefendingCard = (props) => {
         const imgSrc = chosenCardImage["image_url"];
         
         return (
-            <GridItem type="defending" attack={defendingMonster.atk} onLoad={setTimeout(()=>props.setDisplayMessage(true),1000)}>
+            <GridItem type="defending" attack={defendingMonster.atk} onLoad={setTimeout(()=>props.setDisplayMessage(true),750)}>
                 <img src={imgSrc} >
                 </img>
             </GridItem>
         )
     } else {
         return (
-            <h3>Loading...</h3>
+            <h3>You have to use the heart of the cards to draw a monster</h3>
         )
     }
 

@@ -15,17 +15,18 @@ const Message = styled.h1`
 
 const Result = (props) => {
     if (props.displayMessage) {
-        if (props.defendingMonster.atk > props.attackingMonster.atk){
+        console.log(props.defendingMonster, props.attackingMonster);
+        if (Number(props.defendingMonster.atk) > Number(props.attackingMonster.atk)){
             return(
                 <Message type="win">Victory is yours!</Message>
             )
-        } else if (props.defendingMonster.atk < props.attackingMonster.atk){
+        } else if (Number(props.defendingMonster.atk) < Number(props.attackingMonster.atk)){
             return(
                 <Message type="loss">Try again next time!</Message>
             )
         } else {
             return(
-                <Message type="tie">You have to draw again...</Message>
+                <Message type="tie">So Close...</Message>
             )
         }
     } else {
