@@ -14,21 +14,21 @@ function App() {
       .get("https://db.ygoprodeck.com/api/v5/cardinfo.php")
       .then(res => {
         const info = res.data;
-        
+
         //Filter by only monsters
         setMonsters(info.filter( item => item.type.includes("Monster")));
       })
+      .then(junk => console.log(monsters, junk))
       .catch(err => console.log(`Error: ${err}`))
     }, []);
     
-  
   console.log(monsters);
 
   return (
     <div className="App">
       <header className="App-header">
         <Title />
-        <AttackingCard />
+        <AttackingCard monsters={monsters}/>
         <HOTCButton />
       </header>
     </div>
