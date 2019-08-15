@@ -5,6 +5,14 @@ import axios from "axios";
 import Title from "./Title";
 import AttackingCard from "./AttackingCard";
 import HOTCButton from "./HOTCButton";
+import styled from "styled-components";
+
+const AttackArea = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 2%;
+`
+
 
 function App() {
   const [monsters, setMonsters] = useState()
@@ -27,8 +35,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Title />
-        <AttackingCard monsters={monsters}/>
-        <HOTCButton />
+        <AttackArea class="attackArea">
+          <AttackingCard monsters={monsters}/>
+          <HOTCButton />
+        </AttackArea>
       </header>
     </div>
   );
